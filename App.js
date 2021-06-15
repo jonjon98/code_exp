@@ -58,11 +58,5 @@ export default function App() {
         <Stack.Screen name="HomeStack" component={HomeStack} />
       </Stack.Navigator>
     </NavigationContainer>
-    /*<NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Main" component={Main} />
-      </Stack.Navigator>
-    </NavigationContainer>*/
   );
 }
