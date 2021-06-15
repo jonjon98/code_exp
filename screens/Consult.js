@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import firebase from "../database/firebaseDB";
+import { SafeAreaView } from "react-navigation";
 
-const db = firebase.firestore().collection("consults");
+const MapScreen =({navigation}) =>{
+  return(
+    <SafeAreaView forceInset={{top: 'always'}}>
 
-export default function Consult() {
-  return (
-    <View>
-      <Text>hihi</Text>
-    </View>
-  );
+    </SafeAreaView>
+  )
 }
+
+
+export default MapListScreen

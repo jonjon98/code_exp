@@ -7,9 +7,9 @@ import {
   FlatList,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import firebase from "../database/firebaseDB";
+//import firebase from "../database/firebaseDB";
 
-const db = firebase.firestore().collection("todos");
+//const db = firebase.firestore().collection("todos");
 
 export default function NotesScreen({ navigation, route }) {
   const [notes, setNotes] = useState([]);
