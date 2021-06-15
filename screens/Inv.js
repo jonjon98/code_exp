@@ -59,8 +59,13 @@ export default function Inv({ navigation, route }) {
       route.params?.editPrescription &&
       route.params?.editQuantity
     ) {
-      let snapshot = db.where("name", "==", route.params.editName).get();
-      console.log(snapshot);
+      db
+        // Filter results
+        .where("Name", "==", route.params.editName)
+        .get()
+        .then((querySnapshot) => {
+          console.log("hi"); ////////ISSUE WITH THE UPADATE OF DATABASE PLS FIX/////////////////////
+        });
       ///////////to send the new note to firebase DB///////////
       //setNotes([...notes, newNote]); //no need this line already as we have firebase
     }
