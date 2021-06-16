@@ -25,7 +25,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
       />
     </View>
   );
-}
+
 
 const styles = StyleSheet.create({
   container: {
