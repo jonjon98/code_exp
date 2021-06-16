@@ -2,22 +2,21 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import Consult from "./screens/Consult";
 import Pharm from "./screens/Pharm";
-import Inv from "./screens/Inv";
+import InvMain from "./screens/InvMain";
 import Settings from "./screens/Settings";
+import Login from "./screens/Login";
 
 const Tab = createBottomTabNavigator();
-export default function App() {
+const Stack = createStackNavigator();
+
+function HomeStack() {
   return (
-<<<<<<< HEAD
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-=======
-    <NavigationContainer>
+
+    <NavigationContainer independent={true}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -28,7 +27,7 @@ export default function App() {
               iconName = "home";
             } else if (route.name === "Pharm") {
               iconName = "list";
-            } else if (route.name === "Inv") {
+            } else if (route.name === "InvMain") {
               iconName = focused ? "user" : "user-o";
             } else if (route.name === "Settings") {
               iconName = focused ? "user" : "user-o";
@@ -45,10 +44,20 @@ export default function App() {
       >
         <Tab.Screen name="Consult" component={Consult} />
         <Tab.Screen name="Pharm" component={Pharm} />
-        <Tab.Screen name="Inv" component={Inv} />
+        <Tab.Screen name="InvMain" component={InvMain} />
         <Tab.Screen name="Settings" component={Settings} />
       </Tab.Navigator>
     </NavigationContainer>
->>>>>>> jonjon
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer independent={true}>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="HomeStack" component={HomeStack} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
