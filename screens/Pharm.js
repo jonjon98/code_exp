@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useState, Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Modal, Pressable, Alert, TextInput,  } from "react-native";
 import { TapGestureHandler } from "react-native-gesture-handler";
@@ -6,13 +5,6 @@ import firebase from "../database/firebaseDB";
 
 const ph = firebase.firestore().collection("Pharm");
 const prescription = firebase.firestore().collection("Prescription")
-=======
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-//import firebase from "../database/firebaseDB";
-
-//const db = firebase.firestore().collection("consults");
->>>>>>> 0d29693a460e2cddd8a3d868c345e26adfa46b42
 
 
 
