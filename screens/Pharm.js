@@ -8,65 +8,65 @@ const prescription = firebase.firestore().collection("Prescription")
 
 
 
-function pay(med, qty, modalVis) {
+// function pay(med, qty, modalVis) {
   
-  if (med == "Paracetemol") {
-    var price = 10
-  } else { 
-    var price = 15
-  }
-  return (
-    <Modal
-    animationType="slide"
-    transparent={true}
-    visible={modalVis}
-    onRequestClose={() => {
-      // Alert.alert("Modal has been closed.");
-      setModalVis(!modalVis);
-    }}
-  >
-    <View style={styles.centeredView}>
-      <View style={styles.modalView}>
-        <Text style={styles.modalText}>{Medicine}</Text>
+//   if (med == "Paracetemol") {
+//     var price = 10
+//   } else { 
+//     var price = 15
+//   }
+//   return (
+//     <Modal
+//     animationType="slide"
+//     transparent={true}
+//     visible={modalVis}
+//     onRequestClose={() => {
+//       // Alert.alert("Modal has been closed.");
+//       setModalVis(!modalVis);
+//     }}
+//   >
+//     <View style={styles.centeredView}>
+//       <View style={styles.modalView}>
+//         <Text style={styles.modalText}>{Medicine}</Text>
         
-        <Text style={styles.modalText}>Amount: {price * qty}</Text>
-        <TextInput 
-          style={styles.input}
+//         <Text style={styles.modalText}>Amount: {price * qty}</Text>
+//         <TextInput 
+//           style={styles.input}
           
-        />
-        <Text style={styles.modalText}>Cardholder: </Text>
-        <TextInput 
-          style={styles.input}
+//         />
+//         <Text style={styles.modalText}>Cardholder: </Text>
+//         <TextInput 
+//           style={styles.input}
           
-        />
-        <Text style={styles.modalText}>Card Number: </Text>
-        <TextInput 
-          style={styles.input}
+//         />
+//         <Text style={styles.modalText}>Card Number: </Text>
+//         <TextInput 
+//           style={styles.input}
           
-        />
-        <Text style={styles.modalText}>Expiartion Date: </Text>
-        <TextInput 
-          style={styles.input}
+//         />
+//         <Text style={styles.modalText}>Expiartion Date: </Text>
+//         <TextInput 
+//           style={styles.input}
           
-        />
-        <Text style={styles.modalText}>CVV: </Text>
-        <TextInput 
-          style={styles.input}
+//         />
+//         <Text style={styles.modalText}>CVV: </Text>
+//         <TextInput 
+//           style={styles.input}
           
-        />
-        <Pressable
-          style={[styles.button, styles.buttonClose]}
-          onPress={() => { setModalVis(!modalVis); }
-          }
-        >
-          <Text style={styles.textStyle}>Close</Text>
-        </Pressable>
-      </View>
-    </View>
-  </Modal>
+//         />
+//         <Pressable
+//           style={[styles.button, styles.buttonClose]}
+//           onPress={() => { setModalVis(!modalVis); }
+//           }
+//         >
+//           <Text style={styles.textStyle}>Close</Text>
+//         </Pressable>
+//       </View>
+//     </View>
+//   </Modal>
 
-  )
-}
+//   )
+// }
 
 
 const Pharm = () => {
