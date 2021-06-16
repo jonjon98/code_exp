@@ -11,16 +11,7 @@ import Settings from "./screens/Settings";
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
-<<<<<<< HEAD
-    <View style={styles.container}>
-<<<<<<< HEAD
-      <Text>This is branching!</Text>
-=======
-      <Text>Open up App.js to start working on your app! test push</Text>
->>>>>>> 47d7aa8bd8a5fb5c4b19ded329420e683cf77110
-      <StatusBar style="auto" />
-    </View>
-=======
+
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
@@ -53,6 +44,5 @@ export default function App() {
         <Tab.Screen name="Settings" component={Settings} />
       </Tab.Navigator>
     </NavigationContainer>
->>>>>>> jonjon
   );
 }
