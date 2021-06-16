@@ -11,6 +11,8 @@ export default function EditScreen({ navigation }) {
   const [editName, editSetName] = useState("");
   const [editPrescription, editSetPrescription] = useState("");
   const [editQuantity, editSetQuantity] = useState("");
+  //const [id1, setid1] = useState("");
+  const { id1 } = route.params.itemid;
 
   return (
     <View style={[styles.container, { backgroundColor: "white" }]}>
@@ -50,7 +52,7 @@ export default function EditScreen({ navigation }) {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.goBack()}
+          onPress={() => navigation.navigate("InvStack", { itemid: id1 })}
         >
           <Text style={styles.buttonText}>Dismiss</Text>
         </TouchableOpacity>
