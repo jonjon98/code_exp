@@ -14,6 +14,8 @@ import firebase from "../database/firebaseDB";
 const auth = firebase.auth();
 
 export default function Login({ navigation }) {
+  const [Loggedin, setLoggedin] = useState(false);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorText, setErrorText] = useState("");
@@ -24,7 +26,7 @@ export default function Login({ navigation }) {
       .signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         console.log("Signed in!");
-        navigation.navigate("Main");
+        navigation.navigate("HomeStack");
       })
       .catch((error) => {
         console.log("Error!");
@@ -34,35 +36,35 @@ export default function Login({ navigation }) {
   }
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Login Screen</Text>
-        <Text style={styles.fieldTitle}>Email</Text>
-        <TextInput
-          style={styles.input}
-          autoCapitalize="none"
-          autoCompleteType="email"
-          autoCorrect={false}
-          keyboardType="email-address"
-          value={email}
-          onChangeText={(input) => setEmail(input)}
-        />
-        <Text style={styles.fieldTitle}>Password</Text>
-        <TextInput
-          style={styles.input}
-          autoCapitalize="none"
-          autoCompleteType="password"
-          autoCorrect={false}
-          secureTextEntry={true}
-          value={password}
-          onChangeText={(input) => setPassword(input)}
-        />
-        <TouchableOpacity onPress={login} style={styles.loginButton}>
-          <Text style={styles.buttonText}>Log in</Text>
-        </TouchableOpacity>
-        <Text style={styles.errorText}>{errorText}</Text>
-      </View>
-    </TouchableWithoutFeedback>
+    //<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <View style={styles.container}>
+      <Text style={styles.title}>Login Screen</Text>
+      <Text style={styles.fieldTitle}>Email</Text>
+      <TextInput
+        style={styles.input}
+        autoCapitalize="none"
+        autoCompleteType="email"
+        autoCorrect={false}
+        keyboardType="email-address"
+        value={email}
+        onChangeText={(input) => setEmail(input)}
+      />
+      <Text style={styles.fieldTitle}>Password</Text>
+      <TextInput
+        style={styles.input}
+        autoCapitalize="none"
+        autoCompleteType="password"
+        autoCorrect={false}
+        secureTextEntry={true}
+        value={password}
+        onChangeText={(input) => setPassword(input)}
+      />
+      <TouchableOpacity onPress={login} style={styles.loginButton}>
+        <Text style={styles.buttonText}>Log in</Text>
+      </TouchableOpacity>
+      <Text style={styles.errorText}>{errorText}</Text>
+    </View>
+    //</TouchableWithoutFeedback>
   );
 }
 

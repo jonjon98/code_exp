@@ -11,10 +11,11 @@ import Settings from "./screens/Settings";
 import Login from "./screens/Login";
 
 const Tab = createBottomTabNavigator();
-//const Stack = createStackNavigator();
-export default function App() {
+const Stack = createStackNavigator();
+
+function HomeStack() {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -46,12 +47,16 @@ export default function App() {
         <Tab.Screen name="Settings" component={Settings} />
       </Tab.Navigator>
     </NavigationContainer>
+  );
+}
 
-    /*<NavigationContainer>
+export default function App() {
+  return (
+    <NavigationContainer independent={true}>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="HomeStack" component={HomeStack} />
       </Stack.Navigator>
-    </NavigationContainer>*/
+    </NavigationContainer>
   );
 }
