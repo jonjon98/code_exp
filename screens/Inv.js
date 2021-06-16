@@ -13,6 +13,7 @@ const db = firebase.firestore().collection("inventory");
 
 export default function Inv({ navigation, route }) {
   const [Meds, setMeds] = useState([]);
+  //////////////const [id1, setid1] = useState("");
 
   function doNothing() {}
 
@@ -59,13 +60,17 @@ export default function Inv({ navigation, route }) {
       route.params?.editPrescription &&
       route.params?.editQuantity
     ) {
-      db
-        // Filter results
-        .where("Name", "==", route.params.editName)
-        .get()
-        .then((querySnapshot) => {
-          console.log("hi"); ////////ISSUE WITH THE UPADATE OF DATABASE PLS FIX/////////////////////
-        });
+      /*/////////////////////////////////////////setid1(route.params.itemid);
+      deleteMed(id1);
+      console.log(id1);
+      db;
+      // Filter results
+      const newNote = {
+        name: route.params.editName,
+        prescription: parseInt(route.params.editPrescription),
+        quantity: parseInt(route.params.editQuantity),
+      };
+      db.add(newNote);*/
       ///////////to send the new note to firebase DB///////////
       //setNotes([...notes, newNote]); //no need this line already as we have firebase
     }
@@ -96,12 +101,12 @@ export default function Inv({ navigation, route }) {
     navigation.navigate("Add Med");
   }
 
-  function editMed() {
-    navigation.navigate("Edit Med");
+  function editMed(id) {
+    navigation.navigate("Edit Med" /*, { itemid: id }*/);
   }
 
   // This deletes an individual note
-  function deleteNote(id) {
+  function deleteMed(id) {
     console.log("Deleting " + id);
     // To delete that item, we filter out the item we don't want
     db.doc(id).delete();
@@ -127,11 +132,11 @@ export default function Inv({ navigation, route }) {
           You have: {item.quantity} pills left in stock
         </Text>
         <Text style={{ flex: 20 }}>Take {item.prescription} per day</Text>
-        <TouchableOpacity onPress={editMed} style={{ flex: 1 }}>
+        <TouchableOpacity onPress={() => editMed(item.id)} style={{ flex: 1 }}>
           <AntDesign name="edit" size={16} color="#944" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => deleteNote(item.id)}
+          onPress={() => deleteMed(item.id)}
           style={{ flex: 1 }}
         >
           <Ionicons name="trash" size={16} color="#944" />
