@@ -27,7 +27,7 @@ export default function Inv({ navigation, route }) {
             size={30}
             color="black"
             style={{
-              color: "#f55",
+              color: "#F194FF",
               marginRight: 10,
             }}
           />
@@ -133,13 +133,13 @@ export default function Inv({ navigation, route }) {
         </Text>
         <Text style={{ flex: 20 }}>Take {item.prescription} per day</Text>
         <TouchableOpacity onPress={() => editMed(item.id)} style={{ flex: 1 }}>
-          <AntDesign name="edit" size={16} color="#944" />
+          <AntDesign name="edit" size={16} color="#F194FF" />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => deleteMed(item.id)}
           style={{ flex: 1 }}
         >
-          <Ionicons name="trash" size={16} color="#944" />
+          <Ionicons name="trash" size={16} color="#F194FF" />
         </TouchableOpacity>
       </View>
     );

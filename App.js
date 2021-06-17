@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Consult from "./screens/Consult";
 import Pharm from "./screens/Pharm";
 import InvMain from "./screens/InvMain";
 import Settings from "./screens/Settings";
@@ -22,9 +21,7 @@ function HomeStack() {
             let iconName;
 
             //Set the icon based on which route it is (name of the tab)
-            if (route.name === "Consult") {
-              iconName = "home";
-            } else if (route.name === "Pharm") {
+            if (route.name === "Pharm") {
               iconName = "list";
             } else if (route.name === "InvMain") {
               iconName = focused ? "user" : "user-o";
@@ -41,7 +38,6 @@ function HomeStack() {
           inactiveTintColor: "gray",
         }}
       >
-        <Tab.Screen name="Consult" component={Consult} />
         <Tab.Screen name="Pharm" component={Pharm} />
         <Tab.Screen name="InvMain" component={InvMain} />
         <Tab.Screen name="Settings" component={Settings} />

@@ -12,7 +12,7 @@ export default function InvStack() {
         options={{
           title: "Inventory",
           headerStyle: {
-            backgroundColor: "yellow",
+            backgroundColor: "#FFFFFF",
             height: 100,
             shadowColor: "black",
             shadowOpacity: 0.2,
